@@ -10,6 +10,8 @@ dependencies = [
     "pennylane>=0.39.0",
     "tensorflow>=2.16.2",
     "matplotlib>=3.9.2",
+    "torch>=2.5.1",
+    "torchvision==0.20.1+cu124",
 ]
 readme = "README.md"
 requires-python = ">= 3.8"
@@ -24,6 +26,11 @@ dev-dependencies = []
 
 [tool.rye.scripts]
 jn = { cmd = "jupyter notebook --ip=0.0.0.0 --port=8888 --no-browser --allow-root --NotebookApp.token=''" }
+
+[[tool.rye.sources]]
+name = "torch"
+url = "https://download.pytorch.org/whl/cu124"
+type = "index"
 
 [tool.hatch.metadata]
 allow-direct-references = true
